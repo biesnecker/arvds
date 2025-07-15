@@ -50,8 +50,8 @@ static void parse_datestamp(const char* datestamp, int* year, int* month,
     }
 }
 
-static void parse_avelie_date(const char* datestamp, int* year, char* period,
-                              int* day) {
+static void parse_arvelie_date(const char* datestamp, int* year, char* period,
+                               int* day) {
     int ayear, aday;
     char amonth;
 
@@ -104,7 +104,7 @@ static void handle_to_conversion(const char* year_str, const char* timestamp) {
     char aperiod;
 
     base_year = read_base_year(year_str);
-    parse_avelie_date(timestamp, &ayear, &aperiod, &aday);
+    parse_arvelie_date(timestamp, &ayear, &aperiod, &aday);
 
     year = base_year + ayear;
     doy = aday + (aperiod == '+' ? 26 * 14 : (aperiod - 'A') * 14);
